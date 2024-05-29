@@ -1,17 +1,18 @@
 public class Main {
     public static void main(String[] args) {
+        // Объявляем переменные для входных данных
+        int initialBalance = 100; // Начальный баланс клиента
+        int topUpAmount = 1100; // Сумма пополнения
 
-        int initialBalance = 100; // начальная сумма на счету клиента
-        int depositAmount = 300; // сумма пополнения
-
-        int bonus = 0; // переменная для хранения суммы бонуса
-        int finalBalance = initialBalance + depositAmount; // итоговая сумма на счету клиента
-
-        if (depositAmount > 1000) {
-            bonus = depositAmount / 100 - 10; // расчет суммы бонуса (вычитаем 10, так как первые 1000 рублей не участвуют в бонусе)
+        // Рассчитываем бонус и итоговый счёт
+        int bonus = 0;
+        if (topUpAmount > 1000) {
+            bonus = (topUpAmount / 100);
         }
+        int finalBalance = initialBalance + topUpAmount + bonus;
 
-        System.out.println("Итоговый счет: " + finalBalance + " рублей");
-        System.out.println("Бонусные рубли: " + bonus + " рублей");
+        // Выводим результаты
+        System.out.println("Итоговый счёт: " + finalBalance);
+        System.out.println("Бонусные рубли: " + bonus);
     }
 }
